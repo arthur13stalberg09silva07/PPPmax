@@ -1,16 +1,19 @@
 package com.example.pppmax.presentation.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.pppmax.domain.model.Movie
+import com.example.pppmax.domain.usecase.MovieRequestUseCase
 
-class MovieViewModel : ViewModel() {
-    private val _selectedMovieId = MutableLiveData<String>()
+class MovieViewModel(private val movieRequestUseCase: MovieRequestUseCase) : ViewModel() {
 
-    val selectedMovieId: LiveData<String>
-        get() = _selectedMovieId
+    var movieLiveData= MutableLiveData<Movie>()
 
-    fun setSelectedMovieId(movieId: String) {
-        _selectedMovieId.value = movieId
+    fun getMovieById(id:String){
+
+        movieRequestUseCase.getMovieById(id){ response ->
+            movieLiveData.value = response
+        }
     }
+
 }

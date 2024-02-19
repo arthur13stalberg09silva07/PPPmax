@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pppmax.databinding.ActivityMainBinding
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -19,13 +20,8 @@ class MainActivity : AppCompatActivity() {
         binding.buttonPesquisar.setOnClickListener{
             Log.d("MovieID", "Movie ID: $movieId")
 
-            // Criar um Intent
             val intent = Intent(this, MainActivity2::class.java)
-
-            // Adicionar dados extras ao Intent
             intent.putExtra("movieId", movieId)
-
-            // Iniciar a MainActivity2 com o Intent
             startActivity(intent)
         }
     }
