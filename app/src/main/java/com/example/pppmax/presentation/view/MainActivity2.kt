@@ -36,7 +36,11 @@ class MainActivity2 : AppCompatActivity() {
             var viewModel = ViewModelProvider(this, MovieViewModelFactory())
                 .get(MovieViewModel::class.java)
 
-            viewModel.getMovieById("550")
+
+
+            if (movieId != null) {
+                viewModel.getMovieById(movieId)
+            }
 
             viewModel.movieLiveData.observe(this) {
                 Log.d("banana", it.toString())

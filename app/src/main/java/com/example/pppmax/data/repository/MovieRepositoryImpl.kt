@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.flow
 
 class MovieRepositoryImpl(private val api: MovieApi): MovieRepository {
     override suspend fun getMovieById(id:String): Flow<Movie> = flow {
-        val response = api.getMovie()
+        val response = api.getMovie(id)
         val movie = Movie(
             id = response.id,
             title= response.title,

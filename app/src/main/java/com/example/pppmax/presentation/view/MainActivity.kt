@@ -15,9 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val movieId = binding.editId.text.toString()
-
         binding.buttonPesquisar.setOnClickListener{
+            val movieId = binding.editId.text.toString()
             Log.d("MovieID", "Movie ID: $movieId")
 
             val intent = Intent(this, MainActivity2::class.java)
