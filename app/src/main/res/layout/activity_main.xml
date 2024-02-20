@@ -19,7 +19,7 @@
     <EditText
         android:textSize="20sp"
         android:id="@+id/edit_id"
-        android:hint="ID DO FILME"
+        android:hint="NOME DO FILME"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
