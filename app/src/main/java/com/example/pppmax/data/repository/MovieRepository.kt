@@ -4,5 +4,5 @@ import com.example.pppmax.domain.model.Movie
 import kotlinx.coroutines.flow.Flow
 
 interface MovieRepository {
-    suspend fun getMovieById(id:String): Flow<Movie>
+    suspend fun getMovieById(id: String): Flow<Movie>
 }

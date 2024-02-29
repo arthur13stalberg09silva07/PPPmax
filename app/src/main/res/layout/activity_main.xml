@@ -20,13 +20,14 @@
         android:textSize="20sp"
         android:id="@+id/edit_id"
         android:hint="NOME DO FILME"
+        android:inputType="text"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/button_pesquisar"
-        android:layout_width="match_parent"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
         android:text="PESQUISAR"
         app:strokeWidth="0dp" />

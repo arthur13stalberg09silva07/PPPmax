@@ -1,9 +1,9 @@
 package com.example.pppmax.domain.usecase
 
 import android.util.Log
+import com.example.pppmax.data.api.MovieApi
 import com.example.pppmax.data.repository.MovieRepositoryImpl
 import com.example.pppmax.domain.model.Movie
-import com.example.teste2api.MovieApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
@@ -28,7 +28,7 @@ class MovieRequestUseCase (private val api: MovieApi) {
                 .flowOn(Dispatchers.IO)
                 .catch {
                     Log.d(TAG, "Error in getMovieById: "+it)
-                    withContext(Dispatchers.Main){
+                    withContext(Dispatchers.IO){
                         callback(errorMovie)
                     }
                 }
