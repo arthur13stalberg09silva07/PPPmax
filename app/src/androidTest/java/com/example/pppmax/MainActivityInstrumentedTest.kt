@@ -26,5 +26,6 @@ class MainActivityInstrumentedTest {
         // Simular um clique em um botão
         onView(withId(R.id.button_pesquisar))
             .perform(click())
+
     }
 }

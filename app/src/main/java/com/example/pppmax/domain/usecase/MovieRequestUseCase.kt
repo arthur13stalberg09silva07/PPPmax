@@ -14,7 +14,7 @@ import kotlinx.coroutines.withContext
 class MovieRequestUseCase (private val api: MovieApi) {
 
     private val TAG = "Api Requests"
-    private val scope = CoroutineScope( Dispatchers.IO )
+    private val scope = CoroutineScope( Dispatchers.Main)
     private val errorMovie = Movie("????",
         "Missing.",
         "Missing.",
@@ -28,7 +28,7 @@ class MovieRequestUseCase (private val api: MovieApi) {
                 .flowOn(Dispatchers.IO)
                 .catch {
                     Log.d(TAG, "Error in getMovieById: "+it)
-                    withContext(Dispatchers.IO){
+                    withContext(Dispatchers.Main){
                         callback(errorMovie)
                     }
                 }
